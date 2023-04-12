@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bose Link Library</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+
+    <!-------------- Navigation Bar -------------->
+    <div class="navBar">
+        <div id="navUser">User Logged In</div>
+        <div id="navMenu"> Menu</div>
+    </div>
+
+    <!-------------- Header Bar -------------->
+    <div class="headerContainer">
+        <h1>Select Product</h1>
+        <h3>Choose Issue > Choose Product > Copy Link!</h3>
+    </div>
+    
+    <!-------------- Main Content Container -------------->
+    <div class="contentContainer">
+
+        <!-------------- container to hold both sets of buttons -------------->
+        <div class="buttonsContainer">
+            <div class="issueContainer">
+                <h2>Issue</h2>
+                <button id="bose_product_reset" info="HC2563/productCodes/">Product Reset</button>
+                <button id="bose_adjusting_earbuds" info="HC2656/productCodes/">Wearing and Adjusting earbuds</button>
+                <button id="bose_update_firmware" info="HC2474/productCodes/">Update Software & Firmware</button>
+            </div>
+                <!-------------- Container for product buttons -------------->
+            <div class="productContainer">
+                <h2>Products</h2>
+                <button id="bose_qc_earbuds_ii" info="qc_earbuds_ii/article.html">QC Earbuds II</button>
+                <button id="bose_smart_soundbar_900" info="bose_smart_soundbar_900/article.html">Soundbar 900</button>
+                <button id="bose_qc_45_headphones" info="qc_45_headphones">QC45 Headphones</button>
+            </div>
+            <!-------------- Container for Issue buttons -------------->
+
+
+        </div>
+
+        <!-------------- Result Input 2 Copy -------------->
+        <div class="resultSection">
+            <div class="alertContainer">
+                <div id="alertOverlay">Copied to Clipboard!</div>
+            </div>
+            <div class="resultContainer">
+                <button id="clearBtn">Clear</button>
+                <input id="resultLink" placeholder="Create your troubleshooting link..." value="https://www.bose.com/en_us/support/articles/"></p>
+                <button id="copyBtn">Copy</button>
+                
+            </div>
+        </div>
+
+    </div>
+
+        <!-------------- Bottom Bar -------------->
+        <div class="bottomSection">
+            <p>Design and Development by SF</p>
+        </div>
+
+</body>
+
+<script>
+    
+    // clipboard copy function
+    function copyTextToClipboard() {
+        var input = document.getElementById("resultLink");
+        var copyBtn = document.getElementById("copyBtn");
+        // copy input field text
+        input.select();
+        input.setSelectionRange(0,99999);
+        //write input field to clipboard
+        navigator.clipboard.writeText(input.value)
+        .then (function(){
+            
+            //alert for copy
+        })
+        .catch(function(err) {
+            console.error("Unable to copy to clipboard", err);
+        });
+    };
+    // attach the clipboard functon to copy button
+    copyBtn.addEventListener("click", function() {
+        copyTextToClipboard();
+
+    });
+    //append function for taking the info data and inserting into input field
+    function appendInfo (button) {
+        var input = document.getElementById('resultLink');
+        var info = button.getAttribute('info');
+        var currentValue = input.value;
+        input.value = currentValue + '' + info;
+    };
+
+    // assign append function to all buttons id start with bose_
+    var buttons = document.querySelectorAll('[id^="bose_"]');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            appendInfo(button);
+        });
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', function () {
+        var input = document.getElementById('resultLink');
+        input.value = '';
+    })
+
+    function showCopiedAlert() {
+        var alertOverlay = document.getElementById('alertOverlay');
+        alertOverlay.style.display = 'flex';
+        setTimeout(function() {
+            alertOverlay.style.display = 'none';
+        }, 2000); // Hide after 2 seconds
+    }
+
+</script>    
+
+</body>
+</html>
+
+

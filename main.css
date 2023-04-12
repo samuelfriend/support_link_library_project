@@ -1,0 +1,368 @@
+
+
+body {
+    font-family: 'gotham', sans-serif
+}
+
+@font-face {
+    font-family: "gotham";
+    src: url('fonts/') format('woff'),
+         url('fonts/') format('woff2'),
+         url('fonts/Gotham-Book.ttf') format('truetype');
+}
+
+.navBar {
+    display:flex;
+    height:5vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(25, 25, 25);
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.navBar #navMenu, .navBar #navLogo, .navBar #navUser{
+    color:white;
+}
+
+.navBar #navMenu {
+    float: right;
+}
+
+.topSection {
+    height:20vh;
+    border: 1px solid black;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.midSection {
+    height:68vh;
+}
+
+.bottomSection {
+    display:flex;
+    height:3vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(25, 25, 25);
+    padding-left:20px;
+    padding-right:20px;
+    color:white;
+}
+
+.listSection {
+    height: 400px; /* Set the maximum height for the list container */
+    overflow-y: auto; /* Add a vertical scrollbar when the list overflows */
+    overflow-x: hidden; /* Hide horizontal scrollbar if any */
+    
+    }
+
+
+  .listSection::-webkit-scrollbar {
+    width: 0.5em; /* Width of the scrollbar */
+    background-color: #f9f9f9; /* Background color of the scrollbar */
+  }
+  
+  .list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    font-size: 50px;
+  }
+  
+  .list.active {
+    display:block;
+  }
+
+  .list li {
+    padding-bottom: 20px; /* Add padding for each list item */
+  }
+
+  .list li.active {
+    opacity: 1; /* Set opacity for active list items */
+  }
+  
+  .list li:last-child {
+    border-bottom: none; /* Remove bottom border for the last list item */
+  }
+
+  #topHeader {
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    bottom:0;
+  }
+
+ /* .loginBox {
+    max-width:350px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    border: 5px grey solid;
+    padding:20px;
+    border-radius: 20px;
+    align-items: center;;
+  }
+
+  #loginButton {
+    width:25%;
+    align-self: center;
+    padding:10px;
+    margin:10px;
+  }
+
+  #username, #password {
+    width:60%;
+    height:25px;
+    text-align:center;
+    margin:10px;
+  } */
+
+  /* .middle, .leftSide, .loginSection, .topContent, 
+  .content, #productSelect, #productResult,
+  #heading, #btnContainer{
+    border: 1px solid black;
+  } */
+
+  .leftSide {
+    position: relative;
+    align-self:center;
+    margin: 0 auto;
+    text-align: center;;
+  }
+
+  .leftSide #lsTitle {
+    font-size: 70px;
+    font-weight:700;
+  }
+
+  .leftSide #lsTitle2 {
+    font-size: 35px;
+    font-weight:500;
+  }
+
+  .leftSide p {
+    font-size: 20px;
+  }
+
+
+  .loginSection {
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:55%;
+    height:100%;
+    overflow-x:hidden;
+    background-image: url('images/dame.jpeg');
+    background-size: cover;
+    background-position:center;
+  }
+
+  .login {
+    position:relative;
+    padding: 70px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+    border:1px solid #fff;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+    border-radius:20px;
+    width:500px;
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  }
+
+  .login h2 {
+    align-self:center;
+  }
+
+  .login .inputBox {
+    position:relative;
+  }
+
+  .login .inputBox input {
+    position:relative;
+    width:100%;
+    padding:15px 20px;
+    outline:none;
+    font-size:1.25em;
+    color:black;
+    border-radius:5px;
+    border:none;
+    margin-bottom: 30px;
+  }
+
+.login .inputBox #btn {
+  position:relative;
+  border:none;
+  outline:none;
+  color:black;
+  cursor:pointer;
+  font-size:1.25em;
+  font-weight: 600;
+  transition:0.5s;
+}
+
+.login .inputBox #btn:hover {
+  background:black;
+  color:white;
+}
+
+.login .group {
+  display:flex;
+  justify-content: space-between;
+}
+
+.login .group a {
+  font-size: 125em;
+  color: red;
+  font-weight: 500;
+  text-decoration:none;
+}
+
+.middleLogin {
+  height:90vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.middleHome {
+  height:90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.content #productSelect, .content #productResult {
+  position: relative;
+  display:flex;
+}
+
+
+.content #productSelect {
+  width:40%;
+  display:flex;
+  flex-direction: column;
+}
+
+.content #productResult {
+  width:60%;
+}
+
+.topContent #btnContainer { 
+  display:flex;
+  justify-content: space-evenly;
+  width:40%;
+}
+
+#psBtn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.headerContainer h1, .headerContainer h3 {
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+  font-weight:700;
+  margin-top: 10px;
+}
+
+.productContainer, .issueContainer {
+  display:flex;
+  flex-direction: column;
+  margin-bottom:20px;
+  width:200px;
+}
+
+.buttonsContainer {
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+
+.buttonsContainer h2 {
+  text-align: center;
+}
+
+.productContainer {
+  width:30%;
+}
+
+.issueContainer {
+  width:70%;
+}
+.productContainer button, .issueContainer button {
+  margin-bottom: 10px;
+  padding:5px;
+  margin-inline: 30px;
+  font-size:24px;
+  font-family: 'Gotham', sans-serif;
+}
+
+.resultSection {
+  display:flex;
+  flex-direction: column;
+}
+
+.resultContainer {
+  display: flex;
+  margin: 0 auto;
+  width: 1500px;
+  margin-bottom:40px;
+  margin-top:40px;
+  height:50px;
+}
+.alertContainer {
+  display:flex;
+  justify-content: center;
+  margin-top:50px;
+}
+
+#alertOverlay {
+  display:none;
+  position: fixed;
+  width: 300px;
+  height:35px;
+  background-color: rgba(13, 90, 6, 0.5);
+  color:#fff;
+  font-size:18px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#resultLink, #copyBtn, #clearBtn {
+  font-family: 'Gotham', sans-serif;;
+}
+
+#resultLink{
+  flex: auto;
+  padding: 5px;
+  font-size: 18px;
+}
+
+#copyBtn, #clearBtn {
+  margin-left: 5px;
+  margin-right:5px;
+  font-size: 18px;
+  width:150px;
+}
